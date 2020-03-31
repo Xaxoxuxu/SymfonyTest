@@ -19,7 +19,7 @@ class QuestionController extends AbstractController // gives us shorthand method
     }
 
     /**
-     * @Route("/questions/{slug}")
+     * @Route("/questions/{slug}", name="question_slug")
      */
     public function show($slug)
     {
@@ -28,6 +28,8 @@ class QuestionController extends AbstractController // gives us shorthand method
             'Honestly, I like furry shoes better than MY cat',
             'Maybe... try saying the spell backwards?',
         ];
+
+        dump($slug, $this);
 
         return $this->render('question/show.html.twig', [
             'question' => ucwords(str_replace('-', ' ', $slug)),
