@@ -5,17 +5,16 @@ namespace App\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class QuestionController extends AbstractController // gives us shorthand methods (render)
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      */
     public function homepage()
     {
-        return new Response('film');
+        return $this->render('question/homepage.html.twig');
     }
 
     /**
