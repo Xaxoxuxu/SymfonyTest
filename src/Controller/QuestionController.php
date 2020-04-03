@@ -5,21 +5,19 @@ namespace App\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Twig\Environment;
 
 class QuestionController extends AbstractController // gives us shorthand methods (render)
 {
     /**
      * @Route("/", name="app_homepage")
      */
-    public function homepage(Environment $twigEnv) // just to prove that twig is also a service
+    public function homepage(/*Environment $twigEnv*/) // just to prove that twig is also a service
     {
-        $html = $twigEnv->render('question/homepage.html.twig'); // twig service method
-        return new Response($html);
+        /*$html = $twigEnv->render('question/homepage.html.twig'); // twig service method
+        return new Response($html);*/
 
-        //return $this->render('question/homepage.html.twig'); // twig shorthand method
+        return $this->render('question/homepage.html.twig'); // twig shorthand method
     }
 
     /**
