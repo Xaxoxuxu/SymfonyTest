@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController extends AbstractController // gives us shorthand methods (render)
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="app_homepage")
      */
     public function homepage()
     {
@@ -18,7 +18,7 @@ class QuestionController extends AbstractController // gives us shorthand method
     }
 
     /**
-     * @Route("/questions/{slug}", name="question_slug")
+     * @Route("/questions/{slug}", name="app_question_show")
      */
     public function show($slug)
     {
